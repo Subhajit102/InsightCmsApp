@@ -1,0 +1,481 @@
+.container-wrapper {
+    /* background-image: linear-gradient(to right, #f5f5f5, #d5d5d5);  */
+    background-image: url('../../assets/home_bk1.png');
+    width: 100%;
+    height: 30rem;
+    background-size: cover;
+    box-shadow: 50px 50px 113px #defeec inset, -50px -50px 110px #defeec inset;
+}
+
+.container {
+    max-width: 1500px;
+}
+
+.home-img {
+    // margin: 35% 2.5%;
+    width: 40rem;
+
+    @media screen and (max-width: 992px) {
+        width: 30rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 15rem;
+        scale: 1.1;
+    }
+
+    &:hover {
+        animation-name: imgscaleanimation;
+        animation-duration: 100ms;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes imgscaleanimation {
+    0% {
+        scale: 1.01;
+    }
+
+    25% {
+        scale: 1.02;
+    }
+
+    50% {
+        scale: 1.03;
+    }
+
+    75% {
+        scale: 1.04;
+    }
+
+    100% {
+        scale: 1.05;
+    }
+}
+
+.home-txt {
+    margin-top: 6rem;
+    margin-left: -1rem;
+    width: 25rem;
+
+    @media screen and (max-width: 992px) {
+        margin-top: 5rem;
+        margin-left: 0;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: auto;
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    &:hover {
+        animation-name: imgscaleanimation;
+        animation-duration: 100ms;
+        animation-fill-mode: forwards;
+    }
+}
+
+.home-txt h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #103c72;
+
+    @media screen and (max-width: 992px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: 1.5rem;
+    }
+}
+
+.home-txt h5 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+
+    @media screen and (max-width: 992px) {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 500px) {
+        margin-top: -0.5rem;
+        font-weight: 500;
+        font-size: 0.8rem;
+    }
+}
+
+.brush-stroke-bg {
+    width: 50px;
+    height: 5px;
+}
+
+.brush-stroke-img {
+    width: 250px;
+    height: 20px;
+    margin-top: -8.5rem;
+    margin-left: -15px;
+    transform: rotate(-2deg);
+
+    @media screen and (max-width: 992px) {
+        width: 200px;
+        height: 15px;
+        margin-top: -20px;
+        margin-left: -15px;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 140px;
+        height: 8px;
+        margin-top: -90px;
+        margin-left: -10px;
+    }
+}
+
+.register-form {
+    height: 30rem;
+    width: 25rem;
+    background-color: #fff;
+    margin: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    @media screen and (max-width:500px) {
+        height: auto;
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.btn-register {
+    background-color: #ff1c3a;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+    height: 3rem;
+}
+
+.btn-register:focus {
+    box-shadow: 0 0 0 0.25rem hsl(0, 100%, 88%);
+}
+
+.free-text {
+    color: #ff1c3a;
+    font-weight: 700;
+    display: inline-block;
+    animation: free-bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes free-bounce {
+    0% {
+        scale: 1;
+    }
+
+    25% {
+        scale: 1.1;
+    }
+
+    50% {
+        scale: 1;
+    }
+
+    75% {
+        scale: 1.1;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.banner-1 {
+    width: 60rem;
+    height: 3.5rem;
+    background-color: #fff;
+    color: black;
+    padding: 1rem;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    display: flex;
+    font-size: 1rem;
+
+    @media screen and (max-width: 992px) {
+        width: 60rem;
+        height: 5rem;
+    }
+}
+
+.banner-1-small {
+    background-color: #fff;
+    color: black;
+    padding: 1rem;
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    //border-radius: 10px;
+    font-size: 1rem;
+    display: block;
+    font-size: 8px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.programs-1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    // animation-name: programs-header;
+    // animation-duration: 1.6s;
+    // animation-iteration-count: 2;
+}
+
+@keyframes programs-header {
+    0% {
+        color: black;
+    }
+
+    25% {
+        color: blue;
+    }
+
+    50% {
+        color: black;
+    }
+
+    75% {
+        color: blue;
+    }
+
+    100% {
+        color: black;
+    }
+}
+
+.card {
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(58, 58, 58, 0.2), 0 2px 10px 0 rgba(102, 102, 102, 0.19);
+    border-radius: 10px;
+}
+
+.card:hover {
+    animation-name: scaleanimation;
+    animation-duration: 50ms;
+    animation-fill-mode: forwards;
+    @media screen and (max-width:768px) {
+        animation-name: none;
+        animation-duration: 0;
+        animation-fill-mode: none;
+    }
+}
+
+@keyframes scaleanimation {
+    0% {
+        scale: 1.005;
+    }
+
+    25% {
+        scale: 1.01;
+    }
+
+    50% {
+        scale: 1.015;
+    }
+
+    75% {
+        scale: 1.02;
+    }
+
+    100% {
+        scale: 1.025;
+    }
+}
+
+.card-header1 {
+   // background-image: linear-gradient(to right, rgb(8, 0, 232), rgb(65, 53, 171));
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.card-header2 {
+   // background-image: linear-gradient(to right, rgb(148, 0, 131), rgb(255, 95, 236));
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.card-header3 {
+    //background-image: linear-gradient(to right, rgb(224, 145, 0), orange);
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.card-tile-title1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    opacity: 90%;
+}
+
+.card-footer {
+    display: flex;
+    color: #103c72;
+    font-weight: 700;
+}
+
+.insight-recepie-1 {
+    text-align: center;
+}
+
+.card-recepie {
+    border-radius: 10px;
+}
+
+.card-body-recepie1 {
+    background-color: #e6f2ff;
+    height: 100%;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    font-weight: 500;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.card-header-recepie1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0080ff;
+    opacity: 90%;
+    background-color: #e6f2ff;
+    height: 8rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body-recepie2 {
+    background-color: #f3e8fc;
+    height: 100%;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    font-weight: 500;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.card-header-recepie2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #913ece;
+    opacity: 90%;
+    background-color: #f3e8fc;
+    height: 8rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body-recepie3 {
+    background-color: #fff3e3;
+    height: 100%;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    font-weight: 500;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.card-header-recepie3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fc9100;
+    opacity: 90%;
+    background-color: #fff3e3;
+    height: 8rem;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.img-recepie {
+    border: 10px solid white;
+    margin-top: 10px;
+    height: 20rem;
+    width: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-see-more {
+    background-color: #ff1c3a;
+    color: white;
+    font-weight: 700;
+    width: 10rem;
+    height: 2.5rem;
+}
+
+.btn-see-more:focus {
+    box-shadow: 0 0 0 0.25rem hsl(0, 100%, 88%);
+}
+
+.btn-see-more-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-explore-more {
+    background-color: #ff1c3a;
+    color: white;
+    font-weight: 700;
+    width: auto;
+    height: 2.5rem;
+}
+
+.btn-explore-more:focus {
+    box-shadow: 0 0 0 0.25rem hsl(0, 100%, 88%);
+}
+
+.creating-impact-wrapper {
+    background-image: linear-gradient(to right, #e7f3ff, #c0e0ff);
+}
+
+.card-company-list {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+.company-logos {
+    max-width: 96%;
+    height: auto;
+    padding: 5%;
+}

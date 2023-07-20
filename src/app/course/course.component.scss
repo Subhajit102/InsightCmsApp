@@ -1,0 +1,167 @@
+.content-area {
+    display: flex;
+
+    @media screen and (max-width:1024px) {
+        display: block;
+    }
+}
+
+.video-player-wrapper {
+    max-width: 75vw;
+    max-height: 35vw;
+
+    @media screen and (max-width:1024px) {
+        max-width: 100%;
+        max-height: 60vw;
+    }
+
+    text-align: center;
+    margin: 0;
+
+    vg-player {
+        width: 75vw;
+        height: 35vw;
+
+        @media screen and (max-width:1024px) {
+            width: 100%;
+            height: 60vw;
+        }
+    }
+}
+
+.controls-hide {
+    display: none;
+}
+
+.accordion-toggle {
+    .btn-link {
+        text-decoration: none;
+    }
+
+}
+
+.caret-position {
+    position: absolute;
+    right: 5%;
+    top: 20px;
+}
+
+.current-video-name {
+    text-align: left;
+}
+
+.playlist {
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+    }
+
+    @media screen and (max-width:1024px) {
+        max-height: 70vh;
+        width: 100%;
+        padding: 15px 15px;
+        margin: 0;
+    }
+}
+
+ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.player-list li {
+    list-style: none;
+    padding: 15px 15px;
+    display: block;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    background: #fff;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 6%;
+    width: 100%;
+
+    .video-name {
+        margin-left: 5%;
+    }
+
+    &:hover {
+        background: rgb(200, 215, 221) !important;
+    }
+
+    @media screen and (max-width:1024px) {
+        width: 100%;
+        padding: 15px 15px;
+        margin: 0;
+    }
+}
+
+li.selected {
+    background: rgb(200, 215, 221) !important;
+}
+
+.tabset-wrapper {
+    height: 95vh;
+    padding-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    @media screen and (max-width:1024px) {
+        padding-top: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+.course-content{
+    height: 3rem;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+}
+.course-completion-cert-wrapper {
+    height: 30vh;
+    width: 100%;
+    margin-top: 10vh;
+    border: 1px dotted black;
+    background-image: url("./../../assets/demo-cert.png");
+    background-size: 100% 30vh;
+    opacity: 20%;
+    @media screen and (max-width:1024px) {
+        height: 20vh;
+        width: 50%;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+accordion-group {
+    ::ng-deep {
+        div {
+            &>div.panel-heading.card-header.panel-enabled {
+                background-color: rgb(250, 249, 249); // change the background of every accordion heading
+                box-shadow: none;
+
+                .btn-link {
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: rgb(6, 10, 9); // change the accordion heading buttons style
+                }
+            }
+
+            &>div.panel-collapse.collapse.in.show>div {
+                background-color: hsl(0, 0%, 100%); // change the expanded content style
+                border: none;
+            }
+        }
+    }
+}

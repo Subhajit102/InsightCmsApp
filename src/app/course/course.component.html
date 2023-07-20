@@ -1,0 +1,145 @@
+<app-nav-bar-course [courseTitle]="courseDetails?.courseName" [small]="small"></app-nav-bar-course>
+<!-- <app-nav-bar-course [courseTitle]="coursename"></app-nav-bar-course> -->
+<!-- <h2>{{coursename}}</h2> -->
+<div class="content-area">
+    <div class="video-player-wrapper">
+      <vg-player (onPlayerReady)="videoPlayerInit($event)">
+        <vg-overlay-play></vg-overlay-play>
+        <vg-buffering></vg-buffering>
+        <vg-controls [ngClass]="{'controls-hide': !message}">
+  
+          <vg-play-pause style="width: 30px;"></vg-play-pause>
+          <vg-time-display vgProperty="current" vgFormat="mm:ss" style="font-size: small;"></vg-time-display>
+          <vg-scrub-bar>
+            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+          </vg-scrub-bar>
+          <vg-time-display vgProperty="total" vgFormat="mm:ss" style="font-size: small;"></vg-time-display>
+          <vg-playback-button style="width: 30px;"></vg-playback-button>
+          <vg-mute style="width: 30px;"></vg-mute>
+          <vg-volume style="width: 5vw;"></vg-volume>
+          <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
+        <!-- <video #media [vgMedia]="$any(media)" [src]="currentVideo?.mediaLink" id="singleVideo" preload="auto" crossorigin>
+        </video> -->
+        <video #media [vgMedia]="$any(media)" [src]="currentVideo?.mediaLink" id="singleVideo" preload="auto"
+                    crossorigin>
+                </video>
+      </vg-player>
+  
+      <!-- <h2 class="current-video-name">{{currentVideo.name}}</h2> -->
+      <div class="tabset-wrapper">
+        <tabset class="member-tabset tabset-scrollable" #tabset>
+          <tab heading="Learning Path" id="tab1" [active]="small" *ngIf="small">
+            <div class="playlist">
+              <accordion [isAnimated]="true" class="course-accordian">
+                <accordion-group *ngFor="let section of courseDetails?.sections"
+                    [heading]="section.sectionName" [isOpen]="false" #acc>
+                    <div accordion-heading style="width:100%;"
+                        (click)="toggleAccordian(section.sectionName)">
+                        <i class="fa fa-caret-up pull-right float-xs-right caret-position"
+                            *ngIf="acc.isOpen" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down pull-right float-xs-right caret-position"
+                            *ngIf="!acc.isOpen" aria-hidden="true"></i>
+                    </div>
+                    <ul class="player-list">
+                      <li *ngFor="let vdo of getSectionVideo(section?.sectionId); let $index = index" (click)="startPlaylistVdo(vdo, $index)"
+                        [class.selected]="vdo === currentVideo">
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        <span class="video-name">{{ vdo.topicName }}</span>
+                    </li>
+                        <!-- <li *ngFor="let topic of section.topics; let $index = index">
+                            <i class="fa fa-video-camera" aria-hidden="true"></i>
+                            <span class="video-name">{{ topic.topicName }}</span>
+                        </li> -->
+                    </ul>
+                </accordion-group>
+            </accordion>
+              <!-- <accordion [isAnimated]="true">
+                <accordion-group *ngFor="let group of groups" [heading]="group.title" [isOpen]="group.accordianOpen" #acc>
+                  <div accordion-heading style="width:100%;" (click)="toggleAccordian(group.title)">
+                    <i class="fa fa-caret-up pull-right float-xs-right caret-position" *ngIf="acc.isOpen"
+                      aria-hidden="true"></i>
+                    <i class="fa fa-caret-down pull-right float-xs-right caret-position" *ngIf="!acc.isOpen"
+                      aria-hidden="true"></i>
+                  </div>
+                  <ul class="player-list">
+                    <li *ngFor="let vdo of group.videoitems; let $index = index" (click)="startPlaylistVdo(vdo, $index)"
+                      [class.selected]="vdo === currentVideo">
+                      <i class="fa fa-video-camera" aria-hidden="true"></i>
+                      <span class="video-name">{{ vdo.name }}</span>
+                    </li>
+                  </ul>
+                </accordion-group>
+              </accordion> -->
+            </div>
+            <div>
+                <div class="course-completion-cert-wrapper">
+                </div>
+                <h5 style="text-align: center; margin-top:1rem;">Your course completion certificate is <i class="fa fa-lock"></i>
+                </h5>
+              </div>
+          </tab>
+          <tab heading="Details" [active]="!small" *ngIf="true">{{courseDetails?.description}}</tab>
+          <tab heading="Discussions" *ngIf="true">Basic content 1</tab>
+          <tab heading="Announcements" *ngIf="true">Basic content 2</tab>
+          <tab heading="Reviews" *ngIf="true">Basic content 2</tab>
+        </tabset>
+      </div>
+    </div>
+  
+    <div style="width: 100%;">
+      <div class="course-content" *ngIf="!small">
+        Learning Path
+      </div>
+      <div class="playlist" *ngIf="!small">
+        <accordion [isAnimated]="true" class="course-accordian">
+          <accordion-group *ngFor="let section of courseDetails?.sections"
+              [heading]="section.sectionName" [isOpen]="openAccordianSection(section.sectionId)" #acc>
+              <div accordion-heading style="width:100%;"
+                  (click)="toggleAccordian(section.sectionName)">
+                  <i class="fa fa-caret-up pull-right float-xs-right caret-position"
+                      *ngIf="acc.isOpen" aria-hidden="true"></i>
+                  <i class="fa fa-caret-down pull-right float-xs-right caret-position"
+                      *ngIf="!acc.isOpen" aria-hidden="true"></i>
+              </div>
+              <ul class="player-list">
+                <li *ngFor="let vdo of getSectionVideo(section?.sectionId); let $index = index" (click)="startPlaylistVdo(vdo, $index)"
+                    [class.selected]="vdo === currentVideo">
+                    <i class="fa fa-video-camera" aria-hidden="true"></i>
+                    <span class="video-name">{{ vdo.topicName }}</span>
+                </li>
+                  <!-- <li *ngFor="let topic of section.topics; let $index = index">
+                      <i class="fa fa-video-camera" aria-hidden="true"></i>
+                      <span class="video-name">{{ topic.topicName }}</span>
+                  </li> -->
+              </ul>
+          </accordion-group>
+      </accordion>
+        <!-- <accordion [isAnimated]="true">
+          <accordion-group *ngFor="let group of groups" [heading]="group.title" [isOpen]="group.accordianOpen" #acc>
+            <div accordion-heading style="width:100%;" (click)="toggleAccordian(group.title)">
+              <i class="fa fa-caret-up pull-right float-xs-right caret-position" *ngIf="acc.isOpen"
+                aria-hidden="true"></i>
+              <i class="fa fa-caret-down pull-right float-xs-right caret-position" *ngIf="!acc.isOpen"
+                aria-hidden="true"></i>
+            </div>
+            <ul class="player-list">
+              <li *ngFor="let vdo of group.videoitems; let $index = index" (click)="startPlaylistVdo(vdo, $index)"
+                [class.selected]="vdo === currentVideo">
+                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                <span class="video-name">{{ vdo.name }}</span>
+              </li>
+            </ul>
+          </accordion-group>
+        </accordion> -->
+  
+      </div>
+      <div *ngIf="!small">
+        <div class="course-completion-cert-wrapper">
+        </div>
+        <h5 style="text-align: center; margin-top:1rem;">Your course completion certificate is <i class="fa fa-lock"></i>
+        </h5>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+{
+    "http://localhost:4200": {
+      "target": "https://google.com",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }

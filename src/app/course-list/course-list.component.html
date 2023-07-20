@@ -1,0 +1,321 @@
+<app-nav-bar [small]="small"></app-nav-bar>
+<div class="background-wrapper">
+    <div class="back-color"></div>
+    <div class="container">
+        <div [ngStyle]="{'display':small==true ? 'block' : 'flex'}">
+            <div class="course-title">
+                <div class="course-preview-thumbnail" style="margin-bottom: 1rem;" (click)="openModal(template)"
+                    *ngIf="small"></div>
+                <div class="course-header">
+                    <h1>{{courseDetails?.courseName}}</h1>
+                    <div style="max-width: 50rem;">{{courseDetails?.description}}</div>
+                    <div style="margin-top: 1rem;"><i class="fa fa-video-camera" style="margin-right:0.5rem"></i>30+
+                        hours
+                        of total content</div>
+                    <div style="display: flex;margin-top: 0.5rem;">
+                        <div style="color: gold; display: flex;">
+                            <div style="margin-right: 0.5rem;">
+                                {{courseDetails?.rating}}
+                            </div>
+                            <div *ngFor="let r of ratinglist" style="display: flex; margin-top: 0.3rem; ">
+                                <i class="fa fa-star" *ngIf="r>0"></i>
+                                <i class="fa fa-star-half-full" *ngIf="r == -1"></i>
+                                <i class="fa fa-star-o" *ngIf="r == 0"></i>
+                            </div>
+
+                        </div>
+                        <a style="margin-left: 0.5rem;margin-right: 1rem;color: white;"
+                            href="#">({{courseDetails?.reviews}} reviews)</a>
+                        <span><i class="fa fa-users"></i>1.2k students enrolled</span>
+                    </div>
+                    <div style="margin-top: 0.5rem;">Created by: <a href="#"
+                            style="color:white">{{courseDetails?.instructor}}</a></div>
+                    <div class="d-flex" style="margin-top: 0.5rem;">
+                        <div><i class="fa fa-calendar" style="margin-right: 0.5rem;"></i>Last updated
+                            {{courseDetails?.lastUpdated | date :'mediumDate'}}</div>
+                        <div><i class="fa fa-globe"
+                                style="margin-left: 1rem;margin-right: 0.5rem;"></i>{{courseDetails?.language}}</div>
+                    </div>
+                </div>
+
+                <div *ngIf="small" class="buy-course-mobile">
+                    <div class="course-preview-thumbnail" (click)="openModal(template)">
+                        <img src="{{courseDetails?.courseThumbnail}}" alt="">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                            (click)="onRadioClick(1)">
+                        <label class="form-check-label" for="flexRadioDefault1" style="font-weight: 600;">
+                            Buy Course
+                        </label>
+
+                    </div>
+                    <div *ngIf="!showPro">
+                        <span>Get access to only this course forever when you buy it for the price below.</span>
+                        <div class="d-flex"> 
+                                <h3><i class="fa fa-inr"></i> {{courseDetails?.displayPrice}}</h3>
+                            <p style="text-decoration: line-through;margin: 0.4rem 0 0 0.5rem;"><i class="fa fa-inr"></i>{{courseDetails?.price}}</p>
+                        </div>
+                        <button class="btn btn-lg buy-now-btn" >Buy Now</button>
+                    </div>
+                    <hr>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked (click)="onRadioClick(2)">
+                        <label class="form-check-label" for="flexRadioDefault2" style="font-weight: 600;">
+                            Subscribe to Pro
+                        </label>
+
+                    </div>
+                    <div *ngIf="showPro">
+                        <span>Get access to this course and all the other courses on the website for a
+                            subscription.</span>
+                        <div style="display: flex;">
+                            <h3><i class="fa fa-inr"></i> 499</h3>
+                            <p style="margin-top: .4rem;">/month (<i class="fa fa-inr"></i>5999 billed anually)</p>
+                        </div>
+                        <button class="btn btn-lg buy-now-btn">Subscribe to Pro</button>
+                    </div>
+                    <div>
+                        <p style="padding:0.5rem;text-align: center;">7-Day Moneyback Gurantee</p>
+                    </div>
+                </div>
+
+                <div class="course-body">
+                    <div style="padding-top: 1rem;">
+                        <h2>Learning Goals</h2>
+                        <ul>
+                            <li><span style="margin-right: 0.5rem;"><i class="fa fa-check"></i> </span><span>How to
+                                    build an application from start to publishing with .Net Core (v2.2), React (with
+                                    Typescript) and Mobx</span></li>
+                            <li><span style="margin-right: 0.5rem;"><i class="fa fa-check"></i> </span><span>How to use
+                                    AutoMapper and MediatR packages in the .Net projects</span></li>
+                            <li><span style="margin-right: 0.5rem;"><i class="fa fa-check"></i> </span><span>How to use
+                                    Entity Framework Core as the Object Relational Mapper</span></li>
+                            <li><span style="margin-right: 0.5rem;"><i class="fa fa-check"></i> </span><span>How to add
+                                    Identity and Authentication using .Net Core Identity</span></li>
+                            <li><span style="margin-right: 0.5rem;"><i class="fa fa-check"></i> </span><span>How to
+                                    build a Client side application for the API with React</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="course-content">
+                    <h2>Course Content</h2>
+                    <div style="margin-bottom: 1rem;">26 sections • 302 lectures • 34h 18m total length</div>
+                    <div class="playlist">
+                        <accordion [isAnimated]="true" class="course-accordian">
+                            <accordion-group *ngFor="let section of courseDetails?.sections"
+                                [heading]="section.sectionName" [isOpen]="false" #acc>
+                                <div accordion-heading style="width:100%;"
+                                    (click)="toggleAccordian(section.sectionName)">
+                                    <i class="fa fa-caret-up pull-right float-xs-right caret-position"
+                                        *ngIf="acc.isOpen" aria-hidden="true"></i>
+                                    <i class="fa fa-caret-down pull-right float-xs-right caret-position"
+                                        *ngIf="!acc.isOpen" aria-hidden="true"></i>
+                                </div>
+                                <ul class="player-list">
+                                    <li *ngFor="let topic of section.topics; let $index = index">
+                                        <i class="fa fa-video-camera" aria-hidden="true"></i>
+                                        <span class="video-name">{{ topic.topicName }}</span>
+                                    </li>
+                                </ul>
+                            </accordion-group>
+                        </accordion>
+                    </div>
+                </div>
+                <div *ngIf="small" style="margin-top:2rem; padding:1rem; color:black; border: 1px solid gray;">
+                    <div>
+                        <h2>What you will get:</h2>
+                    </div>
+                    <div style="font-weight: 500;">
+                        <div style="display: flex;"><span><i class="fa fa-video-camera"
+                                    style="margin-right:0.5rem"></i></span><span>30 hours+ on-demand video
+                                content</span></div>
+                        <div style="display: flex;"><span><i class="fa fa-check"
+                                    style="margin-right:0.5rem"></i></span><span>Access to all other courses with
+                                Pro subscription</span></div>
+                        <div style="display: flex;"><span><i class="fa fa-check"
+                                    style="margin-right:0.5rem"></i></span><span>Full lifetime access to this
+                                course(without Pro)</span></div>
+                        <div style="display: flex;"><span><i class="fa fa-certificate"
+                                    style="margin-right:0.5rem"></i></span><span>Certificate of Completion</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-details">
+                    <h2>Requirements</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo voluptates odit
+                        exercitationem minima aut, iste quia distinctio labore laudantium sit et saepe error enim. Eius
+                        nostrum aspernatur cumque nobis quas saepe praesentium aperiam aliquam placeat beatae ut et odio
+                        consectetur accusantium enim iure, fuga nam quae dolores quo! Est, sequi?</p>
+                    <h2>Description</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In repellat id facilis! Corrupti
+                        aliquam ab nobis maiores esse! Optio quo nostrum facere voluptatem itaque, ratione
+                        necessitatibus error excepturi ab adipisci incidunt quia culpa eius explicabo? Debitis sequi
+                        harum, et tempore aperiam ipsa a amet officia nihil voluptate distinctio eos sed?</p>
+                    <h2>Instructor</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In repellat id facilis! Corrupti
+                        aliquam ab nobis maiores esse! Optio quo nostrum facere voluptatem itaque, ratione
+                        necessitatibus error excepturi ab adipisci incidunt quia culpa eius explicabo? Debitis sequi
+                        harum, et tempore aperiam ipsa a amet officia nihil voluptate distinctio eos sed?</p>
+                    <h2>Ratings and Reviews</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In repellat id facilis! Corrupti
+                        aliquam ab nobis maiores esse! Optio quo nostrum facere voluptatem itaque, ratione
+                        necessitatibus error excepturi ab adipisci incidunt quia culpa eius explicabo? Debitis sequi
+                        harum, et tempore aperiam ipsa a amet officia nihil voluptate distinctio eos sed?</p>
+
+                </div>
+            </div>
+
+            <div class="course-preview-buy" style="height: auto;" *ngIf="!small">
+                <div class="course-preview-thumbnail" (click)="openModal(template)">
+                    <img src="{{courseDetails?.courseThumbnail}}" alt="">
+                </div>
+                <div class="course-preview-buy-body" id="sticky">
+                    <div class="buy-options">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                (click)="onRadioClick(1)">
+                            <label class="form-check-label" for="flexRadioDefault1" style="font-weight: 600;">
+                                Buy Course
+                            </label>
+
+                        </div>
+                        <div *ngIf="!showPro">
+                            <span>Get access to only this course forever when you buy it for the price below.</span>
+                            <div class="d-flex"> 
+                                    <h3><i class="fa fa-inr"></i> {{courseDetails?.displayPrice}}</h3>
+                                <p style="text-decoration: line-through;margin: 0.4rem 0 0 0.5rem;"><i class="fa fa-inr"></i>{{courseDetails?.price}}</p>
+                            </div>
+                            <button class="btn btn-lg buy-now-btn" (click)="openAddToCartModal(addToCartTemplate)">Buy Now</button>
+                        </div>
+                        <hr>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked (click)="onRadioClick(2)">
+                            <label class="form-check-label" for="flexRadioDefault2" style="font-weight: 600;">
+                                Subscribe to Pro
+                            </label>
+
+                        </div>
+                        <div *ngIf="showPro">
+                            <span>Get access to this course and all the other courses on the website for a
+                                subscription.</span>
+                            <div style="display: flex;">
+                                <h3><i class="fa fa-inr"></i> 499</h3>
+                                <p style="margin-top: .4rem;">/month (<i class="fa fa-inr"></i>5999 billed anually)</p>
+                            </div>
+                            <button class="btn btn-lg buy-now-btn">Subscribe to Pro</button>
+                        </div>
+                        <div>
+                            <p style="padding:0.5rem;text-align: center;">7-Day Moneyback Gurantee</p>
+                        </div>
+                        <div>
+                            <h4>What you will get:</h4>
+                        </div>
+                        <div style="font-weight: 500;">
+                            <div style="display: flex;"><span><i class="fa fa-video-camera"
+                                        style="margin-right:0.5rem"></i></span><span>30 hours+ on-demand video
+                                    content</span></div>
+                            <div style="display: flex;"><span><i class="fa fa-check"
+                                        style="margin-right:0.5rem"></i></span><span>Access to all other courses with
+                                    Pro subscription</span></div>
+                            <div style="display: flex;"><span><i class="fa fa-check"
+                                        style="margin-right:0.5rem"></i></span><span>Full lifetime access to this
+                                    course(without Pro)</span></div>
+                            <div style="display: flex;"><span><i class="fa fa-certificate"
+                                        style="margin-right:0.5rem"></i></span><span>Certificate of Completion</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div style="text-align: center; margin-bottom: 0.5rem;"><i class="fa fa-lock"
+                                style="margin-right:0.5rem"></i>Secure Payment options</div>
+                        <div
+                            style="display: flex;justify-content: space-between; padding-left: 1rem;padding-right: 1rem;">
+                            <img src="./../../assets/Visa_logo.webp" alt="visa" style="width: 3rem; height: 1rem;">
+                            <img src="./../../assets/Mastercard_2019_logo.svg.png" alt="mastercard"
+                                style="width: 2rem; height: 1.2rem;">
+                            <img src="./../../assets/upi.webp" alt="upi" style="width: 2rem; height: 1.2rem;">
+                            <img src="./../../assets/Paytm_Logo.png" alt="paytm" style="width: 2.5rem; height: 1rem;">
+                            <img src="./../../assets/Stripe_Logo.png" alt="stripe" style="width: 3rem; height: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Complete guide to building an app with .Net Core and React</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="vg-player-preview-wrapper">
+            <vg-player (onPlayerReady)="videoPlayerInit($event)">
+                <vg-overlay-play></vg-overlay-play>
+                <vg-buffering></vg-buffering>
+                <vg-controls>
+                    <!-- [ngClass]="{'controls-hide': !message}" -->
+                    <vg-play-pause style="width: 30px;"></vg-play-pause>
+                    <vg-time-display vgProperty="current" vgFormat="mm:ss" style="font-size: small;"></vg-time-display>
+                    <vg-scrub-bar>
+                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                    </vg-scrub-bar>
+                    <vg-time-display vgProperty="total" vgFormat="mm:ss" style="font-size: small;"></vg-time-display>
+                    <vg-playback-button style="width: 30px;"></vg-playback-button>
+                    <vg-mute style="width: 30px;"></vg-mute>
+                    <vg-volume style="width: 5vw;"></vg-volume>
+                    <vg-fullscreen></vg-fullscreen>
+                </vg-controls>
+                <video #media [vgMedia]="$any(media)" [src]="currentVideo?.mediaLink" id="singleVideo" preload="auto"
+                    crossorigin>
+                </video>
+            </vg-player>
+        </div>
+        <ul class="player-list-preview" style="padding-left: 0;">
+            <li *ngFor="let vdo of previewTopics; let $index = index" (click)="startPlaylistVdo(vdo, $index)"
+                [class.selected]="vdo === currentVideo">
+                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                <span class="video-name">{{ vdo.topicName }}</span>
+            </li>
+        </ul>
+    </div>
+</ng-template>
+
+
+
+<ng-template #addToCartTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{addedToCartHeader}}</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="d-flex">
+            <div style="color:green; font-size: 2rem; font-weight: 700;padding: 1rem;">
+                <i class="fa fa-check" aria-hidden="true"></i>
+            </div>
+            <div >
+                <img src="{{courseDetails?.courseThumbnail}}" alt="" style="width:8rem;height:5rem">
+            </div>
+            <div style="margin-left: 1rem; width: 26rem;">
+                <div style="font-weight: 700; font-size: 1.2rem;">{{courseDetails?.courseName}}</div>
+                <div>{{courseDetails?.instructor}}</div>
+            </div>
+            <div>
+                <button class="btn btn-lg buy-now-btn" style="margin-top: 1rem;" (click)="goToCart()">Go to Cart</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

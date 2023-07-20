@@ -1,0 +1,106 @@
+<app-nav-bar [small]="small"></app-nav-bar>
+<div class="container mt-4">
+    <h1>My Learning Dashboard</h1>
+    <div style="display: flex;">
+        <div class="me-4" style="width:100rem">
+            <div>
+                <h4>My Courses</h4>
+            </div>
+            <hr>
+            <!-- <div class="row">
+                <div class="col-lg-6">
+                    <h2>Chart</h2>
+                    <canvas id="piechart"></canvas>
+                </div>
+            </div> -->
+            <!-- <div class="row">
+                <div class="col-lg-6">
+                    <h2>Chart</h2>
+                    <canvas id="progressChart" style="pointer-events: none;"></canvas>
+                </div>
+            </div> -->
+            <!-- <div class="row">
+                <div class="col-1">
+                    <h2>Chart</h2>
+                    <canvas id="progressChart" style="pointer-events: none;"></canvas>
+                </div>
+            </div>  -->
+
+
+            <div style="width:55rem;" *ngFor="let course of userCourses" class="my-courses-card">
+                <div style="display: flex; cursor: pointer;">
+                    <a href="course/{{course.courseId}}/{{course.courseName}}"
+                        style="text-decoration:none; color: black">
+                        <div style="margin-right: 1rem;margin-left: 1rem;">
+                            <img src="{{course?.courseThumbnail}}" alt="" style="width: 8rem; height: 5rem;">
+                        </div>
+                    </a>
+                    <a href="course/{{course.courseId}}/{{course.courseName}}"
+                        style="text-decoration:none; color: black">
+                        <div style="margin-right: 1rem;width: 28rem">
+                            <div>
+                                <h4>{{course?.courseName}}</h4>
+                            </div>
+                            <div>{{course?.instructor}}</div>
+                            <div>{{course?.rating}}</div>
+
+                        </div>
+                    </a>
+                    <div style="width: 12rem">
+                        <div style="width: 5rem;margin-left: 0.5rem;">
+                            <canvas baseChart class="chart" [data]="getProgressData(course?.numberOfTopicsCompleted, course?.numberOfTopics)"
+                                [type]="doughnutChartType">
+                            </canvas>
+                        </div>
+                        <p style="margin: 0; color:#004aad">{{getProgressPercentage(course?.numberOfTopicsCompleted, course?.numberOfTopics)}}% complete </p>
+                    </div>
+                    <div style="width: 10rem">
+                        <div>
+                            <p>Leave a rating:</p>
+                            <h4>*</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vr"></div>
+        <div style="margin-left: 2rem; width: 100%;">
+            <!-- (ngSubmit)="register()" -->
+            <form #registerform="ngForm" autocomplete="off">
+                <div>
+                    <h4>Learning Report:</h4>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" name="userName" [(ngModel)]="userName" placeholder="Enter your name">
+                </div> -->
+                <!-- <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" name="userEmail" [(ngModel)]="userEmail" placeholder="Enter your email address">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number:</label>
+                    <input type="number" class="form-control" name="userPhone" [(ngModel)]="userPhone" placeholder="Enter your phone number">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Billing Address:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="userAddress" [(ngModel)]="userAddress" rows="3"></textarea>
+                </div>
+                <div>Total:</div>
+                <div>
+                    <h2>Rs. {{cartTotal}}</h2>
+                </div>
+                <div style="padding: 0.5rem 0 1rem 0">
+                    <button class="btn btn-lg proceed-to-pay-btn" style="width: 100%" type="submit" (click)="payNow()">Proceed to
+                        Pay</button>
+                </div> -->
+                <hr>
+                <!-- <div class="mb-3">
+                    <label for="promo" class="form-label">Apply Promo Code:</label>
+                    <input type="text" class="form-control" name="promo" placeholder="Enter promo">
+                </div> -->
+            </form>
+
+        </div>
+    </div>
+</div>

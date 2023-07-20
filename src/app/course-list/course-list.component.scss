@@ -1,0 +1,295 @@
+.background-wrapper {
+    // background-color: black;
+    height: auto;
+    width: 100%;
+}
+
+.back-color {
+    height: 20rem;
+    width: 100%;
+    // background-image: linear-gradient(324.97deg, #FCB017 0%, #ED1C24 100%);
+   // background-image: linear-gradient(324.97deg, #cf7500 0%, #1f0001 100%);
+
+    // background-image: linear-gradient(324.97deg, #ff00ff 0%, #35008a 100%);
+    background-image: linear-gradient(324.97deg, #004aad 0%, #16003a 100%);
+
+
+    position: absolute;
+    z-index: -1;
+
+    @media screen and (max-width:1024px) {
+        height: 34rem;
+    }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    max-width: 1400px;
+
+    @media screen and (max-width:1024px) {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 1rem;
+        max-width: 33rem;
+    }
+}
+
+.course-title {
+    color: #fff;
+    width: 100%;
+    margin-right: 1vw;
+}
+
+.course-preview-buy {
+    top: 2rem;
+    height: auto;
+}
+
+#sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100px;
+    height: 100px;
+    top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // box-shadow: 0 0 6px #000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.buy-course-mobile {
+    color: black;
+    background-color: #fff;
+    margin-top: 2.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.course-header {
+    height: 16rem;
+}
+
+.course-body {
+    margin-top: 2rem;
+    height: auto;
+    color: black;
+
+    ul {
+        list-style: none;
+
+        li {
+            margin-bottom: 0.5rem;
+            margin-left: -1rem;
+            display: flex;
+        }
+    }
+}
+
+.course-content,
+.course-details {
+    color: black;
+    padding-top: 1rem;
+}
+
+.course-details {
+    padding-bottom: 1rem;
+}
+
+.accordion-toggle {
+    .btn-link {
+        text-decoration: none;
+    }
+
+}
+
+.course-preview-buy>.course-preview-buy-body {
+    width: 25rem !important;
+    height: auto !important;
+    background-color: #fff !important;
+}
+
+accordion-group {
+    ::ng-deep {
+        div {
+            &>div.panel-heading.card-header.panel-enabled {
+                background-color: rgb(250, 249, 249); // change the background of every accordion heading
+                box-shadow: none;
+
+                .btn-link {
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: rgb(6, 10, 9); // change the accordion heading buttons style
+                }
+            }
+
+            &>div.panel-collapse.collapse.in.show>div {
+                background-color: hsl(0, 0%, 100%); // change the expanded content style
+                border: none;
+            }
+        }
+    }
+}
+
+.caret-position {
+    position: absolute;
+    right: 5%;
+    top: 20px;
+}
+
+.current-video-name {
+    text-align: left;
+}
+
+.playlist {
+    width: auto;
+    max-height: 20rem;
+    overflow-y: auto;
+    color: black;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        // outline: 1px solid slategrey;
+    }
+
+    @media screen and (max-width:1024px) {
+        max-height: 30rem;
+        width: 100%;
+        padding: 5px;
+        margin: 0;
+    }
+
+    ul {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .player-list li {
+        list-style: none;
+        padding: 0.5rem;
+        display: block;
+        border-bottom: 1px solid rgb(236, 236, 236);
+        background: #fff;
+        cursor: pointer;
+        text-align: left;
+        padding-left: 2rem;
+        width: 100%;
+
+        &:nth-last-child(1) {
+            border-bottom: none;
+        }
+
+        .video-name {
+            margin-left: 2rem;
+        }
+
+
+        @media screen and (max-width:1024px) {
+            width: 100%;
+            padding: 15px 15px;
+            margin: 0;
+        }
+    }
+
+    li.selected {
+        background: rgb(200, 215, 221) !important;
+    }
+
+}
+
+.course-preview-thumbnail {
+    width: 100%;
+    cursor: pointer;
+    img{
+        height: auto;
+        width: 25rem;
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+            scale: 1.07;
+            max-width: 30rem;
+            margin-top:-1rem;
+            margin-bottom: 1.5rem;
+        }
+        @media screen and (max-width: 500px) {
+            width: 100%;
+            scale: 1.09;
+            max-width: 30rem;
+            margin-top:-1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+.buy-options{
+    padding: 2rem 1.5rem 1rem 1.5rem;
+    text-align: center;
+}
+.buy-now-btn{
+    background-color: #004aad;
+    color: white;
+    width: 100%;
+    font-weight: 600;
+}
+.vg-player-preview-wrapper {
+    vg-player {
+        width: auto;
+        height: auto;
+        max-height: 30rem;
+
+        @media screen and (max-width:1024px) {
+            width: 100%;
+            height: 60vw;
+        }
+    }
+}
+
+// .modal{
+//     @media screen and (max-width:1024px) {
+//         margin-top: 5rem !important;
+//     }
+// }
+.player-list-preview {
+    max-height: 15rem;
+    overflow-y: scroll;
+
+    @media screen and (max-width:1024px) {
+        height: 20rem;
+    }
+}
+
+.player-list-preview li {
+    list-style: none;
+    padding: 15px 15px;
+    display: block;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    background: #fff;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+
+    .video-name {
+        margin-left: 5%;
+    }
+
+    &:hover {
+        background: rgb(200, 215, 221) !important;
+    }
+
+    @media screen and (max-width:1024px) {
+        width: 100%;
+        padding: 15px 15px;
+        margin: 0;
+    }
+}

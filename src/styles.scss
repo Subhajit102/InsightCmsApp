@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    @media screen and (max-width: 1024px) {
+        font-size: 14px;
+    }
+    text-align: left;
+
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+    color: var(--bs-card-color);
+    background-color: #fff;
+}
+
+.btn-link {
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+}
+
+
+.tab-panel {
+    border: 1px solid #000000;
+    padding: 10px;
+    border-radius: 4px;
+}
+.nav-tabs {
+    --bs-nav-tabs-border-width: 0px !important;
+    --bs-nav-tabs-border-color: #dee2e6;
+    --bs-nav-tabs-border-radius: 0 !important;
+}
+
+.nav-link{
+    color:rgb(102, 102, 102);
+    font-weight: 500;
+}
+
+.nav-tabs>ul{
+    overflow-x: scroll;
+}
+.nav-tabs>li{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.nav-tabs>li.open,
+.member-tabset>.nav-tabs>li:hover {
+    border-bottom: 4px solid #000000;
+
+}
+
+.member-tabset>.nav-tabs>li.open>a,
+.member-tabset>.nav-tabs>li:hover>a {
+    //border: 0;
+    background: none !important;
+    color: #333333;
+}
+
+.member-tabset>.nav-tabs>li.open>a>i,
+.member-tabset>.nav-tabs>li:hover>a>i {
+    color: #a6a6a6;
+}
+
+.member-tabset>.nav-tabs>li.open .dropdown-menu,
+.member-tabset>.nav-tabs>li:hover .dropdown-menu {
+    margin-top: 0px;
+}
+
+.member-tabset>.nav-tabs>li.active {
+    border-bottom: 4px solid #000000;
+    position: relative;
+}
+
+.member-tabset>.nav-tabs>li.active>a {
+    border: 0 !important;
+    color: #333333;
+}
+
+.member-tabset>.nav-tabs>li.active>a>i {
+    color: #404040;
+}
+
+.member-tabset>.tab-content {
+    margin-top: -3px;
+    background-color: #fff;
+    border: 0;
+    border-top: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.tabset-scrollable .nav-tabs {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    background-image: 
+	
+    /* Shadows */ 
+    linear-gradient(to right, white, white),
+    linear-gradient(to right, white, white),
+  
+/* Shadow covers */ 
+    linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
+    linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));   
+
+  background-position: left center, right center, left center, right center;
+	background-repeat: no-repeat;
+	background-color: white;
+	background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+	
+	/* Opera doesn't support this in the shorthand */
+	background-attachment: local, local, scroll, scroll;
+  
+    & > li {
+      float: none;
+      -webkit-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+  }
+
+  .nav-tabs::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+
+.panel-default{
+    background-color: red;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

@@ -1,0 +1,142 @@
+<app-nav-bar [small]="small"></app-nav-bar>
+<div class="container mt-4">
+
+    <div style="display: flex;">
+        <div class="me-4">
+            <div>
+                <h1>Shopping Cart</h1>
+            </div>
+            <div *ngIf="cartItems?.length > 0">
+                <div>{{cartItems?.length}} items in cart</div>
+            </div>
+            <div *ngIf="cartItems?.length == 0">
+                <div><h4>Your Shopping cart is empty.</h4></div>
+                <div style="height:30rem"></div>
+            </div>
+            <div style="width:55rem;" *ngFor="let cartItem of cartItems">
+                <hr>
+                <div style="display: flex;">
+                    <div style="margin-right: 1rem;">
+                        <img src="{{cartItem?.courseThumbnail}}" alt="" style="width: 8rem; height: 5rem;">
+                    </div>
+                    <div style="margin-right: 1rem;width: 32rem">
+                        <div>
+                            <h4>{{cartItem?.courseName}}</h4>
+                        </div>
+                        <div>{{cartItem?.instructor}}</div>
+                        <div>{{cartItem?.rating}}</div>
+                        <!-- <div>38.4 hours | 302 lectures | All levels</div> -->
+                    </div>
+                    <div style="margin-right: 1rem;width: 5rem">
+                        <div>
+                            <h4>Rs. {{cartItem?.displayPrice}}</h4>
+                        </div>
+                        <div>Rs. {{cartItem?.price}}</div>
+                    </div>
+                    <div style="margin-right: 1rem; font-size: 0.8rem;">
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(cartItem?.courseId,1)">Remove</a></div>
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(cartItem?.courseId,2)">Save for later</a></div>
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(cartItem?.courseId,3)">Move to wishlist</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vr" *ngIf="cartItems?.length > 0"></div>
+        <div style="margin-left: 2rem; width: 100%;" *ngIf="cartItems?.length > 0">
+            <!-- (ngSubmit)="register()" -->
+            <form #registerform="ngForm" autocomplete="off">
+                <div>
+                    <h2>Billing Info:</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" name="userName" [(ngModel)]="userName" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" name="userEmail" [(ngModel)]="userEmail" placeholder="Enter your email address">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number:</label>
+                    <input type="number" class="form-control" name="userPhone" [(ngModel)]="userPhone" placeholder="Enter your phone number">
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Billing Address:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="userAddress" [(ngModel)]="userAddress" rows="3"></textarea>
+                </div>
+                <div>Total:</div>
+                <div>
+                    <h2>Rs. {{cartTotal}}</h2>
+                </div>
+                <div style="padding: 0.5rem 0 1rem 0">
+                    <button class="btn btn-lg proceed-to-pay-btn" style="width: 100%" type="submit" (click)="payNow()">Proceed to
+                        Pay</button>
+                </div>
+                <hr>
+                <div class="mb-3">
+                    <label for="promo" class="form-label">Apply Promo Code:</label>
+                    <input type="text" class="form-control" name="promo" placeholder="Enter promo">
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div *ngIf="saveForLaterItems.length > 0"><h4>Saved for Later Items</h4></div>
+            <div style="width:55rem;" *ngFor="let saveForLaterItem of saveForLaterItems">
+                <hr>
+                <div style="display: flex;">
+                    <div style="margin-right: 1rem;">
+                        <img src="{{saveForLaterItem?.courseThumbnail}}" alt="" style="width: 8rem; height: 5rem;">
+                    </div>
+                    <div style="margin-right: 1rem;width: 32rem">
+                        <div>
+                            <h4>{{saveForLaterItem?.courseName}}</h4>
+                        </div>
+                        <div>{{saveForLaterItem?.instructor}}</div>
+                        <div>{{saveForLaterItem?.rating}}</div>
+                        <!-- <div>38.4 hours | 302 lectures | All levels</div> -->
+                    </div>
+                    <div style="margin-right: 1rem;width: 5rem">
+                        <div>
+                            <h4>Rs. {{saveForLaterItem?.displayPrice}}</h4>
+                        </div>
+                        <div>Rs. {{saveForLaterItem?.price}}</div>
+                    </div>
+                    <div style="margin-right: 1rem; font-size: 0.8rem;">
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(saveForLaterItem?.courseId,1)">Remove</a></div>
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(saveForLaterItem?.courseId,4)">Move to cart</a></div>
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(saveForLaterItem?.courseId,3)">Move to wishlist</a></div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="wishListItems.length > 0"><h4>Your Wishlist Items</h4></div>
+            <div style="width:55rem;" *ngFor="let wishListItem of wishListItems">
+                <hr>
+                <div style="display: flex;">
+                    <div style="margin-right: 1rem;">
+                        <img src="{{wishListItem?.courseThumbnail}}" alt="" style="width: 8rem; height: 5rem;">
+                    </div>
+                    <div style="margin-right: 1rem;width: 32rem">
+                        <div>
+                            <h4>{{wishListItem?.courseName}}</h4>
+                        </div>
+                        <div>{{wishListItem?.instructor}}</div>
+                        <div>{{wishListItem?.rating}}</div>
+                        <!-- <div>38.4 hours | 302 lectures | All levels</div> -->
+                    </div>
+                    <div style="margin-right: 1rem;width: 5rem">
+                        <div>
+                            <h4>Rs. {{wishListItem?.displayPrice}}</h4>
+                        </div>
+                        <div>Rs. {{wishListItem?.price}}</div>
+                    </div>
+                    <div style="margin-right: 1rem; font-size: 0.8rem;">
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(wishListItem?.courseId,1)">Remove</a></div>
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(wishListItem?.courseId,2)">Save for later</a></div>
+                        <div><a style="cursor: pointer; text-decoration: underline;color: blue;" (click)="cartActions(wishListItem?.courseId,4)">Move to cart</a></div>
+                    </div>
+                </div>
+            </div>
+</div>

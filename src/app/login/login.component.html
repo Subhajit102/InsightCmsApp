@@ -1,0 +1,29 @@
+<app-nav-bar [small]="small"></app-nav-bar>
+<div class="container">
+    <div class="login-card">
+        <!-- <div style="position: absolute;right:0;padding:1rem;"><i class="fa fa-close"></i></div> -->
+        <div style="text-align: center;font-size: 2rem; font-weight: 700; padding-top: 1rem;">Login</div>
+        <div style="text-align: center;font-weight: 500;font-size: 1.2rem;">To continue learning</div>
+        <div style="padding: 2rem 2rem 1rem 2rem">
+            <button class="btn btn-lg login-btn" style="width: 100%"><i class="fa fa-google"
+                    style="margin-right: 1rem;"></i>Sign in with Google</button>
+        </div>
+        <div class="separator">OR</div>
+        <form #loginform="ngForm" (ngSubmit)="login()" style="padding:0.5rem 2rem 1rem 2rem">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="loginUser.email" placeholder="Enter your email address">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="loginUser.password"  placeholder="Enter your password">
+            </div>
+            <div style="padding: 0.5rem 0 1rem 0">
+                <button class="btn btn-lg login-btn" style="width: 100%" type="submit">Login</button>
+            </div>
+            <hr>
+            <div style="text-align: center;">Don't have an Account? <a href="/register">Register</a></div>
+        </form>
+
+    </div>
+</div>

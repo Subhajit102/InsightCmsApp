@@ -1,0 +1,41 @@
+<app-nav-bar [small]="small"></app-nav-bar>
+<div class="container">
+    <div class="register-card">
+        <div style="text-align: center;font-size: 2rem; font-weight: 700; padding-top: 1rem;">Create your account</div>
+        <div style="text-align: center;font-weight: 500;font-size: 1.2rem;">And start learning</div>
+        <div style="padding: 2rem 2rem 1rem 2rem">
+            <button class="btn btn-lg register-btn" style="width: 100%"><i class="fa fa-google"
+                    style="margin-right: 1rem;"></i>Sign up with Google</button>
+        </div>
+        <div class="separator">OR</div>
+        <form #registerform="ngForm" (ngSubmit)="register()" autocomplete="off" style="padding:0.5rem 2rem 1rem 2rem" >
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" name="userName" [(ngModel)]="registerUser.userName" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="registerUser.email" placeholder="Enter your email address">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="number" class="form-control" name="phoneNumber" [(ngModel)]="registerUser.phoneNumber" placeholder="Enter your phone number">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="registerUser.password" placeholder="Set your password">
+            </div>
+            <div style="padding: 0.5rem 0 1rem 0">
+                <button class="btn btn-lg register-btn" style="width: 100%" type="submit">Sign up & verify email</button>
+            </div>
+            <div>
+                <p style="color: black; font-size: 0.8rem; text-align: center;">By signing up, you agree to our <a style="font-size: 0.8rem;"
+                        href="#">Terms of service</a> and <a href="#" style="font-size: 0.8rem;">Privacy policy</a></p>
+            </div>
+            <hr>
+            <div style="text-align: center;">Already have an Account? <a href="/login">Login</a></div>
+        </form>
+
+
+    </div>
+</div>

@@ -1,0 +1,551 @@
+<app-nav-bar [small]="small"></app-nav-bar>
+<div class="container-wrapper">
+  <div class="container" style="display: flex; flex-wrap: wrap; background-color: rgba(255, 255, 255, 0.6);">
+    <div style="display: flex;">
+      <div class="">
+        <img src="../../../assets/bck1.png" class="home-img">
+        <div class="banner-1" *ngIf="!small">
+          <div class="col">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
+              </svg>
+              126% Avg. CTC Hike</span>
+          </div>
+          <div class="col">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop"
+                viewBox="0 0 16 16">
+                <path
+                  d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" />
+              </svg>
+              Instructors From Top Tech Companies</span>
+          </div>
+          <div class="col">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+                <path
+                  d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
+              </svg>
+              750+ Employer Partners</span>
+          </div>
+        </div>
+      </div>
+      <div class="home-txt">
+        <span>
+          <h1>India’s BEST</h1>
+        </span>
+        <span>
+          <h1><span style="color:#fff; background-color: #ff1c3a;">Tech Learning</span></h1>
+        </span>
+        <span>
+          <h1><span style="color:#fff; background-color: #ff1c3a;">Platform</span></h1>
+        </span>
+
+        <!-- <div class="brush-stroke-bg"><img src="../../../assets/brush-stroke.png" class="brush-stroke-img"></div> -->
+        <br>
+        <span>
+          <h5>Learn industry-relevant skills</h5>
+        </span>
+        <span>
+          <h5>with top tech veterans</h5>
+        </span>
+      </div>
+    </div>
+    <div class="register-form">
+      <div style="padding: 15px;">
+        <div style="text-align: center;margin-top:10px;">
+          <h3>Book a <span style="color: orange;">LIVE</span> class, for <span class="free-text">FREE!</span></h3>
+        </div>
+
+        <br>
+        <div class="form-floating mb-2">
+          <input type="name" class="form-control" id="floatingInput" placeholder="Your Name">
+          <label for="floatingInput" style="color: gray;">Name</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput" style="color: gray;">Email</label>
+        </div>
+        <div style="display: flex;">
+          <select class="form-select form-select-lg mb-2"
+            style="width: 25%;margin-right: 5px; color: gray; font-size: medium;">
+            <option value="91" selected>+91</option>
+          </select>
+          <div class="form-floating mb-2" style="width: 75%;">
+            <input type="phone" class="form-control" id="floatingInput" placeholder="phone">
+            <label for="floatingInput" style="color: gray;">Phone</label>
+          </div>
+        </div>
+        <div class="form-floating mb-2">
+          <select class="form-select" id="floatingSelect">
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label for="floatingSelect">Select Course</label>
+        </div>
+        <div>
+          <button type="button" class="btn btn-register">Register</button>
+        </div>
+        <div style="text-align: center; color:gray">or</div>
+        <div style="text-align: center;color: gray; ">
+          <span>Already have an Account? <br>
+            <a href="#" style="text-decoration: none;">Click here to Login</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="banner-1-small" *ngIf="small">
+      <div class="col">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z" />
+          </svg>
+          126% Avg. CTC Hike</span>
+      </div>
+      <div class="col">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop"
+            viewBox="0 0 16 16">
+            <path
+              d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" />
+          </svg>
+          Instructors From Top Tech Companies</span>
+      </div>
+      <div class="col">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+            <path
+              d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
+          </svg>
+          750+ Employer Partners</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="programs-1">
+      <h1><span style="font-weight: 700;">Programs</span> We Offer</h1>
+      <br>
+      <br>
+    </div>
+    <div style="display: flex;">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <a href="/login" style="text-decoration: none; color: black;" >
+              <div class="card-header1">
+                <img src="./../../assets/program1.png" class="card-img-top" alt="...">
+    
+                  <!-- <div style="width: 70%;margin: 1.5rem;">
+                    <span class="card-tile-title1" style="font-weight: 700; font-size: 1.5rem;">Full Stack Web Development:
+                      .NET Core </span><br>
+                    <span class="card-tile-title1" style="font-weight: 500;">Beginner to Intermediate Level</span>
+    
+                  </div> -->
+                  <!-- <div style="width: 30%;margin-top: 2.2rem;text-align: center;">
+                    <span class="card-tile-title1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                        class="bi bi-code-slash" viewBox="0 0 16 16">
+                        <path
+                          d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+                      </svg>
+                    </span>
+                  </div> -->
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title" style="font-weight: 600;">Full Stack Web Development: .NET Core + Angular</h4>
+                  <p style="font-style: italic;color: #004aad;">(Beginner to Intermediate Level)</p>
+                  <div class="card-text">
+                    <ul>
+                      <li>C#, .NET, SQL Server</li>
+                      <li>ASP.NET Core, MVC, WebAPI</li>
+                      <li>15 Weeks Live Training</li>
+                      <li>Build 5 Real-world Projects</li>
+                      <li>Interview Preparation</li>
+                      <li>Certificate of Completion</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div style="width: 80%">
+                    <span class="card-tile-footer">Learn More</span><br>
+                  </div>
+                  <div style="width: 20%;text-align: center;">
+                    <span class="card-tile-footer">
+                      <i class="fa fa-arrow-right"></i>
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                      </svg> -->
+                    </span>
+                  </div>
+                </div>
+            </a>
+            
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header2">
+              <img src="./../../assets/program2.png" class="card-img-top" alt="...">
+
+              <!-- <div style="width: 70%;margin: 1.5rem;">
+                <span class="card-tile-title1" style="font-weight: 700; font-size: 1.5rem;">Undergraduate
+                  Program</span><br>
+                <span class="card-tile-title1" style="font-weight: 500;">Full Stack Web Development</span>
+
+              </div>
+              <div style="width: 10%;margin-top: 2.2rem;text-align: center;">
+                <span class="card-tile-title1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                    class="bi bi-mortarboard" viewBox="0 0 16 16">
+                    <path
+                      d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z" />
+                    <path
+                      d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z" />
+                  </svg>
+                </span>
+              </div>   -->
+            </div>
+            <div class="card-body">
+              <h4 class="card-title" style="font-weight: 600;">Advanced Full Stack Web Development: .NET Core + Angular/React + Azure</h4>
+              <p style="font-style: italic;color: #004aad;">(For Working Professionals)</p>
+              <div class="card-text">
+                <ul>             
+                  <li> ASP.NET Core, EF Core, Web API</li>
+                  <li>Angular or React, Azure</li>
+                  <li>15 Weeks Live Training</li>
+                  <li>Build 3 Real-world Projects</li>
+                  <li>Interview Preparation</li>
+                  <li>Certificate of Completion</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div style="width: 80%">
+                <span class="card-tile-footer">Learn More</span><br>
+              </div>
+              <div style="width: 20%;text-align: center;">
+                <span class="card-tile-footer">
+                  <i class="fa fa-arrow-right"></i>
+                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                  </svg> -->
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-header3">
+              <img src="./../../assets/program3.png" class="card-img-top" alt="...">
+
+               <!-- <div style="width: 70%;margin: 1.5rem;">
+                <span class="card-tile-title1" style="font-weight: 700; font-size: 1.5rem;">Professional
+                  Program</span><br>
+                <span class="card-tile-title1" style="font-weight: 500;">Full Stack Web Development(Advanced)</span>
+
+              </div>
+              <div style="width: 30%;margin-top: 2.2rem;text-align: center;">
+                <span class="card-tile-title1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                    class="bi bi-building" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+                    <path
+                      d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
+                  </svg>
+                </span>
+              </div>     -->
+            </div>
+            <div class="card-body">
+              <h4 class="card-title" style="font-weight: 600;">MERN: Full-Stack Web Developer</h4>
+              <p style="font-style: italic;color: #004aad;">(For Beginner to Intermediate)</p>
+              <div class="card-text">
+                <ul>             
+                  <li> JavaScript/ES6, React</li>
+                  <li>Node.js, Express, MongoDB</li>
+                  <li>15 Weeks Live Training</li>
+                  <li>Build 3 Real-world Projects</li>
+                  <li>Interview Preparation</li>
+                  <li>Certificate of Completion</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div style="width: 80%">
+                <span class="card-tile-footer">Learn More</span><br>
+              </div>
+              <div style="width: 20%;text-align: center;">
+                <span class="card-tile-footer">
+                  <i class="fa fa-arrow-right"></i>
+
+                  <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                      d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                  </svg> -->
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="insight-recepie-1">
+      <br>
+      <br>
+      <h1><span style="font-weight: 700;">Exlore Courses</span> crafted For High Impact</h1>
+      <br>
+      <br>
+    </div>
+    <div style="display: flex;">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col" *ngFor="let course of courseList">
+          <a href="course-list/{{course.courseId}}/{{course.courseName}}" style="text-decoration:none">
+            <div class="card" (click)="onCourseClick(course.courseId,course.courseName)">
+              <img src="{{course.courseThumbnail}}" class="card-img-top" alt="...">
+              <div class="card-body" style="background-color: #fff;">
+                <h5 class="card-title">{{course.courseName}}</h5>
+                <!-- <p class="card-text" style="padding: 1rem;">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                <div>{{course.instructor}}</div>
+                <div>{{course.rating}}</div>
+
+                <div><span style="font-weight: 700;"><i class="fa fa-inr"></i> {{course.displayPrice}}</span>
+                  <span style="text-decoration:line-through; margin-left: 0.5rem;"><i
+                      class="fa fa-inr"></i>{{course.price}}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="btn-see-more-wrapper">
+      <button type="button" class="btn btn-explore-more">EXPLORE MORE COURSES</button>
+    </div>
+    <br>
+    <br>
+  </div>
+
+
+  <div class="container">
+    <ngb-carousel *ngIf="images" style="height: 20rem;">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="../../assets/hero1.png" alt="Random first slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="../../assets/hero2.png" alt="Random second slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img src="../../assets/hero3.png" alt="Random third slide" />
+        </div>
+        <div class="carousel-caption">
+          <h3>Third slide label</h3>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="container">
+    <div class="insight-recepie-1">
+      <br>
+      <br>
+      <br>
+      <h1><span style="font-weight: 700;">The Insight Recepie to</span> Transform Your Career</h1>
+      <br>
+      <br>
+    </div>
+    <div style="display: flex;">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card-recepie h-50">
+            <div class="card-header-recepie1">
+              <span>A structured & flexible program, that cares for you
+              </span>
+            </div>
+            <div class="card-body-recepie1">
+              <p class="card-text">You begin either as a Beginner, Intermediate, or Advanced learner based on your
+                expertise.</p><br>
+              <img src="../../../assets/teach1small2.png" class="img-recepie">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-recepie h-50">
+            <div class="card-header-recepie2">
+              <span>Be Mentored 1:1 by
+                Experienced Professionals
+              </span>
+            </div>
+            <div class="card-body-recepie2">
+              <p class="card-text">Get senior industry experts as mentors to guide you with mock interviews, career
+                advice, resume review, etc.
+              </p>
+              <img src="../../../assets/liveclass1.jpg" class="img-recepie">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card-recepie h-50">
+            <div class="card-header-recepie3">
+              <span>Become part of
+                a thriving community for life
+              </span>
+            </div>
+            <div class="card-body-recepie3">
+              <p class="card-text">As part of our extensive alumni community you will find job referrals, career advice,
+                life advice, or your future co-founder - all in one place.</p>
+              <img src="../../../assets/Seminar.jpg" class="img-recepie">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="creating-impact-wrapper">
+    <div class="container">
+      <div class="insight-recepie-1">
+        <br>
+        <br>
+        <h1><span style="font-weight: 700;">Creating Impact</span> with 5000+ Tech Professionals & counting…</h1>
+        <br>
+        <br>
+      </div>
+      <div style="display: flex;">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="btn-see-more-wrapper">
+        <button type="button" class="btn btn-see-more">SEE MORE</button>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="insight-recepie-1">
+      <br>
+      <br>
+      <h1>Our Alumni work at some of the<span style="font-weight: 700;"> best companies</span> in the world</h1>
+      <br>
+      <br>
+    </div>
+    <div style="display: flex;">
+      <div>
+        <div class="col">
+          <div class="card-company-list">
+            <img src="../../../assets/company-logos1.png" class="company-logos">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <app-footer></app-footer>
+
+</div>
+
+
+
+
+<!-- 
+<div class="container">
+    <h1>Stay ahead in your career... With right skills from ILP</h1>
+    <div style="display: flex;  flex-wrap: wrap; padding: 2rem; justify-content: space-between; cursor:pointer" >
+        <div style="width:300px; height: 40vh; background-color: rgb(117, 234, 255); border: 1px solid black;" 
+         *ngFor="let course of courseList">
+            <div style="padding:1rem; " (click)="onCourseClick(course.courseId,course.courseName)">
+                <img src="{{course.courseThumbnail}}" alt="{{course.courseName}}" style="height: 10rem; width:16rem;">
+                <h5>{{course.courseName}}</h5>
+                <br>
+                <p>{{course.description}}</p>
+            </div>
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod magnam corrupti saepe dolorem natus hic similique voluptatem illum blanditiis. Laborum pariatur neque odio magni assumenda atque enim officiis molestiae sit!</p>
+</div>
+ -->
